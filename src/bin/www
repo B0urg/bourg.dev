@@ -1,0 +1,88 @@
+#!/usr/bin/env node
+/**
+ * Loading dotenv config
+ */
+require('dotenv').config();
+
+/**
+ * Module dependencies
+ */
+const app = require('../app');
+const http = require('http');
+
+/**
+ * Getting the port from the dotenv file
+ * @type {*|number|boolean} the server port
+ */
+const port = normalizePort(process.env.PORT || 3000);
+app.set('port', port);
+
+/**
+ * Creating a server from the app template
+ * @type {Server<typeof IncomingMessage, typeof ServerResponse>} the created server
+ */
+const server = http.createServer(app);
+
+/**
+ * Starting the server and registering the Listeners
+ */
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Function to check if the port from the dotenv file is valid
+ * @param val the port from the config file
+ * @returns {number|*|boolean} the checked port
+ */
+function normalizePort(val){
+    const port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+        return val;
+    }
+
+    if (port >= 0) {
+        return port;
+    }
+
+    return false;
+}
+
+/**
+ * Function to simplify the error
+ * @param error the error
+ */
+function onError(error){
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
+
+    const bind = typeof port === 'string'
+        ? 'Pipe ' + port
+        : 'Port ' + port;
+
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+            break;
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+}
+
+/**
+ * Sending a message when the server starts
+ */
+function onListening(){
+    let addr = server.address();
+    const bind = typeof addr === 'string'
+        ? 'pipe ' + addr
+        : 'port ' + addr.port;
+    console.log('Listening on ' + bind);
+}
