@@ -4,6 +4,8 @@
 .light-mode{
     --color-general-background: #ffffff;
     --color-general-accent: #124059;
+    --color-general-secondary: #5D5C5CED;
+    --color-general-secondary-light: #A09E9E72;
     --color-nav-background: #808080;
     --color-nav-highlight: #454545;
     --color-nav-highlight-dark: #2e2e2e;
@@ -11,6 +13,8 @@
 :root{
     --color-general-background: #1a1c1e;
     --color-general-accent: #124059;
+    --color-general-secondary: #5D5C5CED;
+    --color-general-secondary-light: #A09E9E72;
     --color-nav-background: #202225;
     --color-nav-highlight: #36393F;
     --color-nav-highlight-dark: #18191C;
@@ -32,6 +36,7 @@ nav{
     position: fixed;
     top: 0;
     bottom: 0;
+    z-index: 99;
 }
 
 .centered{
