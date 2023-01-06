@@ -1,0 +1,79 @@
+/*noinspection CssUnknownTarget*/
+@import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap');
+#welcome-text__container{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+}
+#welcome-text__container::before{
+    content: '<h1>';
+    position: relative;
+    left: -10%;
+    color: var(--color-general-secondary);
+    animation: 3s lineUp ease-out;
+    display: inline-block;
+}
+#welcome-text__container::after{
+    content: '</h1>';
+    position: relative;
+    left: 95%;
+    color: var(--color-general-secondary);
+    animation: 3s lineUp ease-out;
+    display: inline-block;
+}
+#welcome-text{
+    font-size: 3rem;
+}
+#welcome-text > #name-text{
+    color: var(--color-general-accent);
+    opacity: .5;
+    font-family: 'Yeon Sung', cursive;
+}
+#welcome-description__container{
+    position: absolute;
+    top: 55%;
+    left: 45%;
+    transform: translate(-45%, -55%);
+    padding-top: 1rem;
+}
+#welcome-description__container::before{
+    content: '<p>';
+    position: relative;
+    left: -18%;
+    color: var(--color-general-secondary);
+    font-size: .9rem;
+    animation: 3s lineUp ease-out;
+    display: inline-block;
+}
+#welcome-description__container::after{
+    content: '</p>';
+    position: relative;
+    left: 95%;
+    color: var(--color-general-secondary);
+    font-size: .9rem;
+    animation: 3s lineUp ease-out;
+    display: inline-block;
+}
+#welcome-description{
+    font-size: 1.5rem;
+    color: var(--color-general-secondary-light);
+}
+
+@keyframes lineUp {
+    0% {
+        opacity: 0;
+        transform: translateY(80%);
+    }
+    20% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
