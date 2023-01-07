@@ -77,3 +77,15 @@
         transform: translateY(0%);
     }
 }
+
+
+
+@media only screen and (max-width: 400px) {
+    #welcome-text__container{
+        padding-left: 1rem;
+    }
+    #welcome-description__container{
+        padding-top: 2.5rem;
+        padding-left: 1rem;
+    }
+}
