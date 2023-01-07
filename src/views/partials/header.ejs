@@ -1,36 +1,52 @@
 <nav>
     <ul class="circles">
         <li class="circle">
-            <div class="nav-button" id="account-button" onclick="this.classList.add('rotatingY')"></div>
+            <span class="material-symbols-outlined nav-button" style="font-size: 3rem" onclick="this.classList.add('rotatingY')"> account_circle </span>
             <div class="description-container">
                 <h3 class="description-text"> Account </h3>
             </div>
         </li>
         <li class="divider"></li>
         <li class="circle">
-            <div class="nav-button" id="about-button" onclick="window.location.href = '/about'"></div>
+            <span class="material-symbols-outlined nav-button" style="font-size: 3rem" onclick="window.location.href = '/about'"> info </span>
             <div class="description-container">
                 <h3 class="description-text"> About </h3>
             </div>
         </li>
         <li class="circle">
-            <div class="nav-button" id="projects-button" onclick="window.location.href = '/projects'"></div>
+            <span class="material-symbols-outlined nav-button" style="font-size: 3rem" onclick="window.location.href = '/projects'"> code </span>
             <div class="description-container">
                 <h3 class="description-text"> Projects </h3>
             </div>
         </li>
         <li class="circle">
-            <div class="nav-button" id="contact-button" onclick="window.location.href = '/contact'"></div>
+            <span class="material-symbols-outlined nav-button" style="font-size: 3rem" onclick="window.location.href = '/contact'"> alternate_email </span>
             <div class="description-container">
                 <h3 class="description-text"> Kontakt </h3>
             </div>
         </li>
 
         <li class="circle">
-            <div class="nav-button" id="settings-button" onclick="this.classList.add('rotating')"></div>
+            <span class="material-symbols-outlined nav-button" style="font-size: 3rem" onclick="this.classList.add('rotating')"> settings </span>
             <div class="description-container">
                 <h3 class="description-text"> Settings </h3>
             </div>
         </li>
     </ul>
 </nav>
+<div id="circularMenu" class="circular-menu">
+
+    <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
+        <span class="material-symbols-outlined"> person </span>
+    </a>
+
+    <div class="items-wrapper">
+        <a href="https://www.instagram.com/b0urgk/?theme=dark" class="menu-item "></a>
+        <a href="https://twitter.com/B0urgDev" class="menu-item "></a>
+        <a href="https://github.com/B0urg" class="menu-item "></a>
+        <a href="#" class="menu-item" id="placeholder-item">
+            <span class="material-symbols-outlined" style="color: black; font-size: 2.5rem"> construction </span>
+        </a>
+    </div>
+
+</div>
