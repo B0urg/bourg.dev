@@ -108,88 +108,133 @@ nav{
 .nav-button{
     width: 100%;
     height: 100%;
+    color: var(--color-nav-background);
+    font-size: 4rem;
+    transition: color .2s ease;
 }
-#account-button{
-    /*noinspection CssUnknownTarget*/
-    background-image: url('/media/account_circle_FILL0_wght400_GRAD0_opsz48.svg');
+.nav-button:hover{
+    color: var(--color-general-accent);
 }
-#about-button{
-    /*noinspection CssUnknownTarget*/
-    background-image: url('/media/info_FILL0_wght400_GRAD0_opsz48.svg');
-}
-#projects-button{
-    /*noinspection CssUnknownTarget*/
-    background-image: url('/media/code_FILL0_wght400_GRAD0_opsz48.svg');
-}
-#contact-button{
-    /*noinspection CssUnknownTarget*/
-    background-image: url("/media/phone_in_talk_FILL0_wght400_GRAD0_opsz48.svg");
-    transition: background-image linear;
-}
-#settings-button{
-    /*noinspection CssUnknownTarget*/
-    background-image: url("/media/settings_FILL0_wght400_GRAD0_opsz48.svg");
-}
-#account-button:hover{
-    animation: rotatingY 1s linear infinite;
-}
-#projects-button:hover{
-    animation: shake 0.8s linear;
-}
-#settings-button:hover{
-    animation: rotating 4s linear infinite;
-}
-#contact-button:hover{
-    animation: callingPhone 2s linear infinite;
+.circular-menu {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
 }
 
-@keyframes shake {
-    10%, 90% {
-        transform: translate3d(-1px, 0, 0);
-    }
+.circular-menu .floating-btn {
+    display: block;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    background-color: var(--color-general-accent);
+    box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, .26);
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    line-height: 3.9;
+    cursor: pointer;
+    outline: 0;
+    transition: background-color .5s ease;
+}
 
-    20%, 80% {
-        transform: translate3d(2px, 0, 0);
-    }
+.circular-menu.active .floating-btn {
+    box-shadow: inset 0 0 3px hsla(0, 0%, 0%, .3);
+    background-color: var(--color-nav-highlight-dark) ;
+}
 
-    30%, 50%, 70% {
-        transform: translate3d(-4px, 0, 0);
-    }
+.circular-menu .floating-btn:active {
+    box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, .4);
+}
 
-    40%, 60% {
-        transform: translate3d(4px, 0, 0);
-    }
+.circular-menu .floating-btn i {
+    font-size: 1.3em;
+    transition: transform .2s;
 }
-@-webkit-keyframes rotating {
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
-}
-@keyframes rotatingY {
-    from {transform: rotateY(45deg);}
-    to {transform: rotateY(225deg);}
-}
-@keyframes callingPhone {
-    30%{
-        /*noinspection CssUnknownTarget*/
-        background-image: url("/media/call_FILL0_wght400_GRAD0_opsz48.svg");
-    }
-    60%{
-        /*noinspection CssUnknownTarget*/
-        background-image: url("/media/phone_in_talk_FILL0_wght400_GRAD0_opsz48_1_.svg");
 
-    }
-    90% {
-        /*noinspection CssUnknownTarget*/
-        background-image: url("/media/phone_in_talk_FILL0_wght400_GRAD0_opsz48.svg");
-    }
+.circular-menu.active .floating-btn i {
+    transform: rotate(-45deg);
 }
-.rotating {
-    animation: rotating 4s linear infinite;
+
+.circular-menu:after {
+    display: block;
+    content: ' ';
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -2;
+    background-color: var(--color-general-accent);
+    transition: all .3s ease;
 }
-.rotatingY {
-    animation: rotatingY 1s linear infinite;
+
+.circular-menu.active:after {
+    transform: scale3d(5.5, 5.5, 1);
+    transition-timing-function: cubic-bezier(.68, 1.55, .265, 1);
+}
+
+.circular-menu .items-wrapper {
+    padding: 0;
+    margin: 0;
+}
+
+.circular-menu .menu-item {
+    position: absolute;
+    top: .2em;
+    right: .2em;
+    z-index: -1;
+    display: block;
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-size: 1em;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 3;
+    background-color: hsla(0,0%,0%,.1);
+    transition: transform .3s ease, background .2s ease, width .5s ease, height .5s ease;
+}
+#placeholder-item,
+#placeholder-item:hover{
+    transition: none;
+    cursor: not-allowed;
+    width: 3em;
+    height: 3em;
+}
+.menu-item:hover{
+    width: 3.5em;
+    height: 3.5em;
+}
+.circular-menu .menu-item:hover {
+    background-color: hsla(0,0%,0%,.3);
+}
+
+.circular-menu.active .menu-item {
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.circular-menu.active .menu-item:nth-child(1) {
+    transform: translate3d(1em,-7em,0);
+    /*noinspection CssUnknownTarget*/
+    background: url("/media/instagram.png");
+    background-size: cover;
+}
+
+.circular-menu.active .menu-item:nth-child(2) {
+    transform: translate3d(-3.5em,-6.3em,0);
+    /*noinspection CssUnknownTarget*/
+    background: url("/media/twitter.svg");
+    background-size: cover;
+}
+
+.circular-menu.active .menu-item:nth-child(3) {
+    transform: translate3d(-6.5em,-3.2em,0);
+    /*noinspection CssUnknownTarget*/
+    background: url("/media/github-mark.png");
+    background-size: cover;
+}
+
+.circular-menu.active .menu-item:nth-child(4) {
+    transform: translate3d(-7em,1em,0);
 }
