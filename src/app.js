@@ -13,8 +13,6 @@ app.use('/', indexRouter);
 app.set('views', path.join(__dirname, 'views'));
 app.set('layout', 'layouts/default.ejs');
 
-app.get('/', (req ,res, next) => {
-    res.render('index.ejs');
-})
+
 
 module.exports = app;
