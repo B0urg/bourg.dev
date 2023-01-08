@@ -26,5 +26,14 @@
             <%- include('../partials/footer.ejs') %>
         </footer>
     </div>
+    <script type="application/javascript" defer>
+        const computerManButton = document.getElementById('placeholder-item');
+
+        let clicks = 0;
+        computerManButton.addEventListener('click', (event) => {
+            clicks++;
+            if(clicks === 3) return window.location.href = "https://www.youtube.com/watch?v=jeg_TJvkSjg&t=68s";
+        });
+    </script>
 </body>
 </html>
