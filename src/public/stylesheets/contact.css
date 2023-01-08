@@ -1,0 +1,27 @@
+#contact-container{
+    display: grid;
+    place-items: center;
+    padding-top: 5rem;
+}
+#contact-container > *{
+    display: inline-block;
+}
+#contact-title{
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    color: var(--color-general-accent);
+}
+#contact-description{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+#contact-links{
+    list-style: none;
+}
+#contact-links > li{
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
+}
+#contact-links > li > span{
+    font-size: 2rem;
+}
