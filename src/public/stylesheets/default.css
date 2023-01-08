@@ -4,6 +4,7 @@
 .light-mode{
     --color-general-background: #ffffff;
     --color-general-accent: #124059;
+    --color-general-accent-light: #41BCFFFF;
     --color-general-secondary: #5D5C5CED;
     --color-general-secondary-light: #A09E9E72;
     --color-nav-background: #808080;
@@ -13,6 +14,7 @@
 :root{
     --color-general-background: #1a1c1e;
     --color-general-accent: #124059;
+    --color-general-accent-light: #41bcff;
     --color-general-secondary: #5D5C5CED;
     --color-general-secondary-light: #A09E9E72;
     --color-nav-background: #202225;
@@ -38,7 +40,19 @@ nav{
     bottom: 0;
     z-index: 99;
 }
+a{
+    color: #000;
+    text-decoration: none;
+    background-image: linear-gradient(to right, var(--color-general-accent), var(--color-general-accent-light));
+    background-size: 0 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .2s linear;
+}
 
+a:hover{
+    background-size: 100% 2px;
+}
 .centered{
     position: absolute;
     top: 50%;
