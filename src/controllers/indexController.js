@@ -18,7 +18,9 @@ exports.renderAboutPage = (req, res) => {
 exports.renderProjectsPage = async (req, res) => {
     const repoList = [];
     const repos = await projectModel.getCurrentRepos();
-    for(repo of repos){
+    for(let repo of repos){
+        if(repo.name === "B0urg") continue;
+        // noinspection JSUnresolvedVariable
         repoList.push({
             "name": repo.name,
             "link": repo.html_url,
