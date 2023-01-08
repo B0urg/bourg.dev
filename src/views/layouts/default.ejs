@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="/stylesheets/default.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="/javascript/default.js" defer></script>
 </head>
 <body>
     <div class="wrapper">
@@ -21,10 +22,15 @@
                 <%- include('../partials/modals.ejs') %>
             </div>
         </main>
-
-        <footer>
-            <%- include('../partials/footer.ejs') %>
-        </footer>
     </div>
+    <script type="application/javascript" defer>
+        const computerManButton = document.getElementById('placeholder-item');
+
+        let clicks = 0;
+        computerManButton.addEventListener('click', (event) => {
+            clicks++;
+            if(clicks === 3) return window.location.href = "https://www.youtube.com/watch?v=jeg_TJvkSjg&t=68s";
+        });
+    </script>
 </body>
 </html>

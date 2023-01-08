@@ -4,6 +4,7 @@
 .light-mode{
     --color-general-background: #ffffff;
     --color-general-accent: #124059;
+    --color-general-accent-light: #41BCFFFF;
     --color-general-secondary: #5D5C5CED;
     --color-general-secondary-light: #A09E9E72;
     --color-nav-background: #808080;
@@ -13,6 +14,7 @@
 :root{
     --color-general-background: #1a1c1e;
     --color-general-accent: #124059;
+    --color-general-accent-light: #41bcff;
     --color-general-secondary: #5D5C5CED;
     --color-general-secondary-light: #A09E9E72;
     --color-nav-background: #202225;
@@ -38,7 +40,19 @@ nav{
     bottom: 0;
     z-index: 99;
 }
+a{
+    color: #000;
+    text-decoration: none;
+    background-image: linear-gradient(to right, var(--color-general-accent), var(--color-general-accent-light));
+    background-size: 0 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .2s linear;
+}
 
+a:hover{
+    background-size: 100% 2px;
+}
 .centered{
     position: absolute;
     top: 50%;
@@ -119,6 +133,9 @@ nav{
     position: fixed;
     bottom: 1em;
     right: 1em;
+}
+.circular-menu:hover > *{
+    background-image: none;
 }
 
 .circular-menu .floating-btn {
@@ -201,10 +218,12 @@ nav{
     cursor: not-allowed;
     width: 3em;
     height: 3em;
+
 }
 .menu-item:hover{
     width: 3.5em;
     height: 3.5em;
+    background-image: none;
 }
 .circular-menu .menu-item:hover {
     background-color: hsla(0,0%,0%,.3);
@@ -237,4 +256,139 @@ nav{
 
 .circular-menu.active .menu-item:nth-child(4) {
     transform: translate3d(-7em,1em,0);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid var(--color-general-accent);
+    width: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: var(--color-general-accent);
+    color: white;
+}
+
+.modal-header > h2{
+    text-align: center;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: var(--color-general-accent);
+    color: white;
+    font-size: .8rem;
+}
+#switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+#switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }

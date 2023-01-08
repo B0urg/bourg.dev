@@ -1,0 +1,97 @@
+.java:before{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background: #b07219;
+    display: inline-block
+}
+.typescript:before{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background: #2b7489;
+    display: inline-block;
+}
+.shell:before{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background: #89e051;
+    display: inline-block;
+}
+.kotlin:before{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background: #F18E33;
+    display: inline-block;
+}
+.makefile:before{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background: #427819;
+    display: inline-block;
+}
+.html:before{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background: #e44b23;
+    display: inline-block;
+}
+.c:before{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background: #555555;
+    display: inline-block;
+}
+.assembly:before{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background: #6E4C13;
+    display: inline-block;
+}
+.c-sharp:before{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background: #178600;
+    display: inline-block;
+}
+.javascript:before{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background: #f1e05a;
+    display: inline-block;
+}
+.css:before{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background: #563d7c;
+    display: inline-block;
+}
+.cplusplus:before{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background: #F34B7D;
+    display: inline-block;
+    left: 0;
+}

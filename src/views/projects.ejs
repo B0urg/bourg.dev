@@ -1,0 +1,40 @@
+<!--suppress HtmlUnknownTarget -->
+<link rel="stylesheet" href="/stylesheets/projects.css">
+<link rel="stylesheet" href="/stylesheets/languageColor.css">
+
+<div id="projects-welcome__container">
+    <h1 id="projects_welcome__title"> Projects </h1>
+</div>
+
+<div class="projects-container">
+    <div class="projects">
+        <% repos.forEach(repo => { %>
+            <div class="project">
+                <h1 class="project-name">
+                    <a href="<%- repo.link %>" class="project-link">
+                        <%- repo.name.charAt(0).toUpperCase() + repo.name.slice(1); %>
+                    </a>
+                </h1>
+                <% if(repo.archived){ %>
+
+                    <p class="project-archived__notice"> Archived </p>
+
+                <% } %>
+                <p class="project-description ">
+                    <%- repo.description %>
+                </p>
+                <div class="project-footer">
+                    <p class="project-lang <%- repo.lang.toLowerCase().replace(/ /g,"_").replace(/\+/g, "plus"); %>">
+                        <%- repo.lang %>
+                    </p>
+                    <p class="project-date">
+                        <% const createdDate = new Date(repo.created_at); %>
+                        <% const formattedDate = createdDate.getDay() + "/" + createdDate.getMonth() + "/" + createdDate.getFullYear() %>
+                        <%- formattedDate%>
+                    </p>
+
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
