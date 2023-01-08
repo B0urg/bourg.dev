@@ -1,0 +1,39 @@
+#about-container{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8rem;
+    padding-top: 2rem;
+    padding-left: 5rem;
+}
+#about_welcome__title{
+    position: absolute;
+    font-size: 5rem;
+    color: var(--color-general-accent);
+}
+
+/*noinspection DuplicatedCode*/
+#about_welcome__title::before{
+    content: 'About Me';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: bottom;
+    transform: rotateX(180deg);
+    line-height: .865em;
+    background: linear-gradient(0deg, var(--color-general-accent) 0, transparent 80%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#about-text__container{
+    position: absolute;
+    padding-top: 30rem;
+}
+#about-text__title{
+    font-size: 3rem;
+}
+#about-text{
+    font-size: 1.5rem;
+    padding-top: .5rem;
+    padding-bottom: 3rem;
+}
