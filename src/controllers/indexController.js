@@ -39,3 +39,6 @@ exports.renderProjectsPage = async (req, res) => {
         "repos": repoList,
     });
 }
+exports.renderContactPage = (req, res) => {
+    res.render('contact.ejs');
+}
