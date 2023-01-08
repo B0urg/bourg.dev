@@ -134,6 +134,9 @@ a:hover{
     bottom: 1em;
     right: 1em;
 }
+.circular-menu:hover > *{
+    background-image: none;
+}
 
 .circular-menu .floating-btn {
     display: block;
@@ -215,10 +218,12 @@ a:hover{
     cursor: not-allowed;
     width: 3em;
     height: 3em;
+
 }
 .menu-item:hover{
     width: 3.5em;
     height: 3.5em;
+    background-image: none;
 }
 .circular-menu .menu-item:hover {
     background-color: hsla(0,0%,0%,.3);
