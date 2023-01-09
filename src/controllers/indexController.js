@@ -2,17 +2,18 @@ const aboutModel = require('../models/AboutModel');
 const projectModel = require('../models/ProjectModel');
 
 exports.renderHomePage = (req, res) => {
-    res.render('index.ejs');
+    res.render('index.ejs', {"title": "Home"});
 }
 exports.renderAboutPage = (req, res) => {
     const aboutText = aboutModel.getAboutText();
     const lastUpdate = aboutModel.getLastUpdate();
 
     res.render('about.ejs', {
-        aboutData : {
+        "aboutData" : {
             aboutText: aboutText,
             lastUpdate: lastUpdate
-        }
+        },
+        "title": "About"
     });
 }
 exports.renderProjectsPage = async (req, res) => {
@@ -37,8 +38,9 @@ exports.renderProjectsPage = async (req, res) => {
     });
     res.render('projects.ejs',{
         "repos": repoList,
+        "title": "Projects"
     });
 }
 exports.renderContactPage = (req, res) => {
-    res.render('contact.ejs');
+    res.render('contact.ejs', {"title": "Contact"});
 }
